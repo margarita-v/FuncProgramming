@@ -9,11 +9,11 @@
 ; Если коэффициенты многочлена не заданы, будет взят многочлен x^2 - 2*x + 1
 (defun issolve(x &optional (a 1) (b -2) (c 1))
   (if (equal (polynomial a b c x) 0)
-    (write-line "YES")
-    (write-line "NO")))
+    (return-from issolve t)
+    (return-from issolve nil)))
 
 ; Тестирование
-(issolve 1)
-(issolve 0)
-(issolve 1 1 -5 4)
-(issolve 5 1 -5 4)
+(print (issolve 1))
+(print (issolve 0))
+(print (issolve 1 1 -5 4))
+(print (issolve 5 1 -5 4))
